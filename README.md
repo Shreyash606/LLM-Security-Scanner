@@ -6,9 +6,9 @@ Seclens presents findings in a clean, GitHub‑like interface with an **Issues**
 ---
 
 ## 🔗 Live Link (add later)
-After deployment, place your production URL here:
 
-**https://your-domain.vercel.app** _(coming soon)_
+
+**https://llm-security-scanner-beryl.vercel.app/** 
 
 ---
 

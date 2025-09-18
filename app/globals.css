@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* GitHub-like look */
+:root {
+  --gh-bg: #f6f8fa;
+  --gh-card: #ffffff;
+  --gh-border: #d0d7de;
+  --gh-muted: #57606a;
+  --gh-header: #24292e;
+  --gh-headerText: #f0f6fc;
+}
+
+html, body { height: 100%; }
+body {
+  background: var(--gh-bg);
+  color: #24292e;
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+}
+a { color: #0969da; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1200px; margin: 0 auto; padding: 16px; }
+
+.gh-card { background: var(--gh-card); border: 1px solid var(--gh-border); border-radius: 8px; box-shadow: var(--shadow, none); }
+.gh-btn { @apply px-3 py-1.5 border rounded-md bg-white hover:bg-gray-50 active:scale-[0.99] transition; border-color: var(--gh-border); }
+.gh-input { @apply border rounded-md px-3 py-2; border-color: var(--gh-border); background: #fff; }
+.gh-badge { @apply inline-flex items-center gap-1 px-2 py-0.5 text-xs border rounded-md; border-color: var(--gh-border); }
+
+/* Severity label colors */
+.badge-low { background: #dafbe1; color: #1a7f37; border-color: #abdbb2; }
+.badge-medium { background: #fff8c5; color: #9a6700; border-color: #e6d39b; }
+.badge-high { background: #fff1bb; color: #8a4b00; border-color: #e7bd7a; }
+.badge-critical { background: #ffebe9; color: #cf222e; border-color: #ffb8b0; }
+
+/* Monaco line highlight */
+.monaco-editor .code-highlight { background-color: rgba(250, 204, 21, 0.35); }
+
+/* Sticky right pane */
+.sticky-pane { position: sticky; top: 88px; }
+
+/* Subtle table-like rows */
+.row { display: grid; grid-template-columns: 1fr auto; gap: 12px; padding: 12px; border-top: 1px solid var(--gh-border); }
+.row:first-child { border-top: none; }
+.row:hover { background: #f9fbfd; }
+
+/* Header */
+.gh-header { background: var(--gh-header); color: var(--gh-headerText); border-bottom: 1px solid #30363d; }
+.gh-header a { color: var(--gh-headerText); text-decoration: none; }
+.gh-header a:hover { text-decoration: underline; }
+
+/* Issue line highlight (content area) */
+.monaco-editor .code-highlight {
+  background-color: rgba(245, 158, 11, 0.25) !important; /* amber-500 @ 25% */
+}
+
+/* Gutter stripe on the highlighted line */
+.monaco-editor .margin .code-hl-gutter {
+  border-left: 4px solid #f59e0b; /* amber-500 */
+}
+
+/* Optional: make the stripe easier to see in high-DPI */
+@media (min-resolution: 2dppx) {
+  .monaco-editor .margin .code-hl-gutter { border-left-width: 5px; }
+}
